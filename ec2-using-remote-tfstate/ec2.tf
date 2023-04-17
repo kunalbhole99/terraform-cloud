@@ -7,6 +7,6 @@ resource "aws_instance" "terraform-cloud-vm" {
   subnet_id              = data.terraform_remote_state.vpc.outputs.public_subnets[0]          
   vpc_security_group_ids = [aws_security_group.terraform-cloud-vm-sg.id,]
   tags = {
-    "Name" = "terraform-cloud-vm-using-remote-${count.index}"
+    "Name" = "tf-cloud-vm-using-remote-${count.index}"
   }
 }
