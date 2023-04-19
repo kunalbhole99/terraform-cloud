@@ -6,4 +6,7 @@ resource "aws_instance" "terraform-cloud-vm" {
   user_data              = file("install.sh")
   subnet_id              = data.terraform_remote_state.vpc.outputs.public_subnets[0]          
   vpc_security_group_ids = [aws_security_group.terraform-cloud-vm-sg.id]
+  tags = {
+    "Name" = "tf-cloud-vm-using-remote-sentinel-${count.index}"
+  }
 }
