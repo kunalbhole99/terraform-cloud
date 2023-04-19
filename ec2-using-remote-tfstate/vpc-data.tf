@@ -7,7 +7,7 @@ data "terraform_remote_state" "vpc" {
     hostname = "app.terraform.io"
     organization = "kunaltech"
     workspaces = {
-      name = "terraform-cloud-networking"
+      name = "terraform-cloud-vpc-networking"
     }
   }
 }
